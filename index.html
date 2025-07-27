@@ -2,85 +2,167 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Ziraat Güvenli Ödeme - Giriş</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Araç Sahibi IBAN Bilgileri</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      font-family: "Segoe UI", sans-serif;
+      height: 100vh;
+      width: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
-    .container {
-      max-width: 400px;
-      margin: 80px auto;
-      padding: 30px;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+    .background-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 80px;
+      color: rgba(186, 12, 47, 0.06); /* Ziraat kırmızısı ile saydam yazı */
+      white-space: nowrap;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content-box {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.96);
+      border-radius: 14px;
+      padding: 28px;
+      width: 90%;
+      max-width: 440px;
+      box-shadow: 0 0 14px rgba(0,0,0,0.1);
+      text-align: left;
+      z-index: 1;
+    }
+
+    .logo-top {
       text-align: center;
-    }
-    .logo {
-      width: 160px;
-      margin-bottom: 30px;
-    }
-    h2 {
-      color: #ba0c2f;
       margin-bottom: 20px;
     }
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-sizing: border-box;
+
+    .logo-top img {
+      width: 60px;
+      height: auto;
+      border-radius: 16px;
     }
-    .code-box {
-      margin-top: 20px;
+
+    .title {
       font-size: 22px;
-      letter-spacing: 6px;
-      color: #000;
-      background: #e4e4e4;
-      padding: 10px;
-      border-radius: 8px;
       font-weight: bold;
-      user-select: none;
+      color: #ba0c2f;
+      margin-bottom: 20px;
+      text-align: center;
     }
-    .button {
-      margin-top: 25px;
-      background-color: #ba0c2f;
-      color: #fff;
-      border: none;
-      padding: 12px 20px;
+
+    .info {
       font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
+      line-height: 1.6;
     }
-    .note {
-      margin-top: 25px;
-      font-size: 13px;
-      color: #888;
+
+    .info strong {
+      color: #222;
+    }
+
+    .disclaimer {
+      margin-top: 24px;
+      background-color: #fffbea;
+      padding: 12px;
+      border-left: 4px solid #ba0c2f;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .timer-box {
+      margin-top: 24px;
+      background-color: #ba0c2f;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 480px) {
+      .content-box {
+        padding: 20px;
+      }
+      .title {
+        font-size: 20px;
+      }
+      .info {
+        font-size: 15px;
+      }
+      .disclaimer {
+        font-size: 13px;
+      }
+      .timer-box {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="ziraat.png" alt="Ziraat Bankası Logo" class="logo">
-    <h2>Güvenli Ödeme Girişi</h2>
-    <form action="odeme_bilgilendirme.html" method="GET">
-      <input type="text" name="tc" placeholder="T.C. Kimlik Numaranız" maxlength="11" required pattern="\d{11}">
-      <input type="password" name="sifre" placeholder="İnternet Şifreniz" required>
-      <div class="code-box">A93F7K</div>
-      <input type="text" name="kod" placeholder="Yukarıdaki Güvenlik Kodunu Yazınız" maxlength="6" required>
-      <button type="submit" class="button">Devam Et</button>
-    </form>
-    <div class="note">
-      Bu ekran <strong>Ziraat Onaylı Bilgilendirme</strong> amaçlıdır.
+  <div class="background-text">Ziraat Bankası</div>
+  <div class="content-box">
+    <div class="logo-top">
+      <img src="ziraat2.jpeg" alt="Ziraat Logo">
     </div>
+    <div class="title">Araç Sahibi IBAN Bilgileri</div>
+    <div class="info">
+      <strong>Referans No:</strong> 2025-ZT-548321<br />
+      <strong>Araç Sahibi:</strong> Ahmet Demir<br />
+      <strong>IBAN:</strong> TR43 0001 0002 7164 7861 6050 01<br />
+      <strong>Tutar:</strong> 385.000,00 TL<br />
+      <strong>Durum:</strong> Güvence Hesabında
+    </div>
+
+    <div class="disclaimer">
+      Bu işlem <strong>Ziraat Güvenli Ödeme</strong> sistemi kapsamında gerçekleştirilmiştir.<br><br>
+      Tutar, noter satış işleminin tamamlanmasıyla birlikte araç sahibinin hesabına aktarılacaktır.<br><br>
+      Detaylı bilgi için Ziraat Mobil veya İnternet Şubesi'ni kullanabilirsiniz.
+    </div>
+
+    <div class="timer-box" id="countdown">03:00</div>
   </div>
+
+  <script>
+    let initialTime = 180;
+    let extraTimeGiven = false;
+    let timeLeft = initialTime;
+    const countdownEl = document.getElementById('countdown');
+
+    function updateTimer() {
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      const seconds = String(timeLeft % 60).padStart(2, '0');
+      countdownEl.textContent = minutes + ':' + seconds;
+
+      if (timeLeft > 0) {
+        timeLeft--;
+        setTimeout(updateTimer, 1000);
+      } else if (!extraTimeGiven) {
+        extraTimeGiven = true;
+        timeLeft = 60;
+        updateTimer();
+      } else {
+        countdownEl.textContent = "Süre Doldu";
+        countdownEl.style.backgroundColor = "#999";
+      }
+    }
+
+    updateTimer();
+  </script>
 </body>
 </html>
